@@ -74,8 +74,8 @@ namespace Controllers
 
         private void SpawnEnemy()
         {
-            var enemy = Object.Instantiate(_currentLevel.EnemyComponents[Random.Range(0,_currentLevel.EnemyComponents.Count-1)], _enemiesTransofm);
-            enemy.transform.position = _currentLevel.SpawnPoints[Random.Range(0, _currentLevel.SpawnPoints.Count - 1)].position;
+            var enemy = Object.Instantiate(_currentLevel.EnemyComponents[Random.Range(0,_currentLevel.EnemyComponents.Count)], _enemiesTransofm);
+            enemy.transform.position = _currentLevel.SpawnPoints[Random.Range(0, _currentLevel.SpawnPoints.Count)].position;
             enemy.SetTarget(_target.transform);
             
             _livingEnemies.Add(enemy);
