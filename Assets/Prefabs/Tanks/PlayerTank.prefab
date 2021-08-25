@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 818539969829594243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,8 @@ GameObject:
   - component: {fileID: 818539970381651161}
   - component: {fileID: 818539970381651166}
   - component: {fileID: 818539970381651163}
-  m_Layer: 0
+  - component: {fileID: 3223041136658504483}
+  m_Layer: 6
   m_Name: PlayerTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +155,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &3223041136658504483
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818539970381651167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.48, y: 1.65}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.48, y: 1.65}
+  m_EdgeRadius: 0
 --- !u!1 &818539971501612679
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +192,7 @@ GameObject:
   - component: {fileID: 818539971501612672}
   - component: {fileID: 818539971501612673}
   - component: {fileID: 818539971501612678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DefaultWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 1
   Countdown: 0.5
   Speed: 3
   PoolingItem: 0
@@ -263,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7223495360264164917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +323,7 @@ GameObject:
   - component: {fileID: 5974760803953992413}
   - component: {fileID: 6302129751329061279}
   - component: {fileID: 7090197008456612358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DefaultWeapon (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 1
   Countdown: 0.5
   Speed: 3
   PoolingItem: 0
@@ -395,7 +424,7 @@ GameObject:
   - component: {fileID: 4460722512449046964}
   - component: {fileID: 2240172890816122782}
   - component: {fileID: 1167262096609905066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DefaultWeapon (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 1
   Countdown: 0.5
   Speed: 3
   PoolingItem: 0
@@ -495,7 +525,7 @@ GameObject:
   - component: {fileID: 846084181817716755}
   - component: {fileID: 4629526186787923652}
   - component: {fileID: 3796982033065886157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoubleWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,6 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9492ee0efd140c6b0ac03cff70472e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
   Countdown: 0.5
   Speed: 5
   PoolingItem: 0
@@ -595,7 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7781514328390810134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AdditionalProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6244805701433984683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 699167650076217984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6141574670296347435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}

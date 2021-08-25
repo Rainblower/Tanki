@@ -8,6 +8,8 @@ namespace Core
     {
         public InputController InputController { get; private set; }
         public PlayerController PlayerController { get; private set; }
+        public LevelController LevelController { get; private set; }
+        public EnemyController EnemyController { get; private set; }
 
         private bool _gameStarted;
         
@@ -15,14 +17,20 @@ namespace Core
         {
             InputController = new InputController();
             PlayerController = new PlayerController(transform,gameConfig);
+            LevelController = new LevelController(transform,gameConfig);
+            EnemyController = new EnemyController(transform,gameConfig);
             
             StartGame();
         }
 
         public void StartGame()
         {
+            LevelController.StartLevel(0);
+            
             PlayerController.SpawnPlayer();
             PlayerController.SetupInput(InputController);
+
+            EnemyController.Start(PlayerController.Player, LevelController.CurrentLevel);
             
             _gameStarted = true;
         }
@@ -32,6 +40,7 @@ namespace Core
             if (_gameStarted)
             {
                 InputController.LocalUpdate();
+                EnemyController.LocalUpdate();
             }
         }
     }

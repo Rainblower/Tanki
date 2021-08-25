@@ -3,8 +3,9 @@ using System.Linq;
 using Models;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Views.Tank;
 
-public class TankViewController : MonoBehaviour
+public class TankViewController : MonoBehaviour, ILivedEntity
 {
     [SerializeField] private Rigidbody2D _rb = default;
     [SerializeField] private List<BaseWeaponComponent> _weapons = default;
@@ -18,6 +19,9 @@ public class TankViewController : MonoBehaviour
     
     private float _velocity;
     private float _rotation;
+
+    public float Health => _tankModel.Health;
+    public float Armor => _tankModel.Armor;
 
     public void Init(TankModel tankModel)
     {

@@ -10,6 +10,8 @@ namespace Controllers
         private GameConfig _gameConfig;
 
         private TankViewController _tankViewController;
+
+        public TankViewController Player => _tankViewController;
         
         public PlayerController(Transform transform, GameConfig gameConfig)
         {

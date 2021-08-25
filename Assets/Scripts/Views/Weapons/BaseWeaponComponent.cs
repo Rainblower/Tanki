@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class BaseWeaponComponent : MonoBehaviour
 {
+    public float Damage;
     public float Countdown;
     public float Speed;
 
