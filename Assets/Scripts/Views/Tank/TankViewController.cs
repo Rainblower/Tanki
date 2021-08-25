@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,18 +9,21 @@ public class TankViewController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb = default;
     [SerializeField] private List<BaseWeaponComponent> _weapons = default;
     
-    public float baseSpeed = 77.5f;
-    public float rotateSpeed = 0.1f;
-
     [ShowInInspector]
     private BaseWeaponComponent _currentWeapon;
+    private int _currentWeaponIndex;
+
+    [ShowInInspector]
+    private TankModel _tankModel;
     
     private float _velocity;
     private float _rotation;
 
-    public void Init()
+    public void Init(TankModel tankModel)
     {
+        _tankModel = tankModel;
         _currentWeapon = _weapons.FirstOrDefault();
+        _currentWeaponIndex = 0;
     }
     
     private void Fire()
@@ -45,16 +49,38 @@ public class TankViewController : MonoBehaviour
     public void NextWeaponHandler()
     {
         Debug.Log("next weapon");
+
+        if (_currentWeaponIndex == _weapons.Count - 1)
+            _currentWeaponIndex = 0;
+        else
+            _currentWeaponIndex++;
+        
+        ChangeWeapon();
     }
 
     public void PrevWeaponHandler()
     {
         Debug.Log("prev weapon");
+        
+        if (_currentWeaponIndex == 0)
+            _currentWeaponIndex = _weapons.Count - 1;
+        else
+            _currentWeaponIndex--;
+        
+        ChangeWeapon();
+    }
+
+    private void ChangeWeapon()
+    {
+        _currentWeapon.gameObject.SetActive(false);
+
+        _currentWeapon = _weapons[_currentWeaponIndex];
+        _currentWeapon.gameObject.SetActive(true);
     }
     
     private void FixedUpdate()
     {
-        _rb.velocity = transform.up *  _velocity * baseSpeed;
-        transform.Rotate( -Vector3.forward ,rotateSpeed * _rotation);
+        _rb.velocity = transform.up *  _velocity * _tankModel.MoveSpeed;
+        transform.Rotate( -Vector3.forward ,_tankModel.RotateSpeed * _rotation);
     }
 }

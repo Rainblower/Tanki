@@ -1,4 +1,5 @@
-﻿using SO;
+﻿using Models;
+using SO;
 using UnityEngine;
 
 namespace Controllers
@@ -23,8 +24,9 @@ namespace Controllers
 
         public void SpawnPlayer()
         {
+            TankModel tankModel = new TankModel();
             _tankViewController = Object.Instantiate(_gameConfig.Tank, _playerTransform);
-            _tankViewController.Init();
+            _tankViewController.Init(tankModel);
         }
 
         public void SetupInput(InputController inputController)

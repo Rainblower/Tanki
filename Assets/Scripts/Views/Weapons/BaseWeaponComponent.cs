@@ -3,8 +3,6 @@ using UnityEngine;
 
 public abstract class BaseWeaponComponent : MonoBehaviour
 {
-    public SpriteRenderer SpriteRenderer;
-
     public float Countdown;
     public float Speed;
 
