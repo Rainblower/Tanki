@@ -37,10 +37,10 @@ namespace Controllers
             var enemy = collider.GetComponent<BaseEnemyComponent>();
             if (enemy != null)
             {
-                var a = _gameController.DamageController.DoDamage(enemy, projectile.Damage);
-                if (!a)
+                var isLive = _gameController.DamageController.DoDamage(enemy, projectile.Damage);
+                if (!isLive)
                 {
-                    MonoBehaviour.Destroy(enemy.gameObject);
+                    _gameController.EnemyController.KillEnemy(enemy);
                 }
             }
             

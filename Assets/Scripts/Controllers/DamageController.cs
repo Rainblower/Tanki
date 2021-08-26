@@ -11,14 +11,7 @@ namespace Controllers
             
             Debug.Log("Entity: " + entity.gameObject.name + $" take {projectileDamage} damage -" + $" Health: {entity.Health}");
             
-            if (entity.Health > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return entity.Health > 0;
         }
     }
 }

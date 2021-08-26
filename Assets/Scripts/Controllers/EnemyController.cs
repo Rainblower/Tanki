@@ -80,5 +80,11 @@ namespace Controllers
             
             _livingEnemies.Add(enemy);
         }
+
+        public void KillEnemy(BaseEnemyComponent enemy)
+        {
+            _livingEnemies.Remove(enemy);
+            Object.Destroy(enemy.gameObject);
+        }
     }
 }
