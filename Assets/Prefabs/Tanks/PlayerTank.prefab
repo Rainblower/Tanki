@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 818539971501612678}
   - {fileID: 3796982033065886157}
   - {fileID: 2119706076782297271}
-  - {fileID: 1167262096609905066}
+  - {fileID: 3347858728657731165}
 --- !u!212 &818539970381651166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -423,9 +423,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4460722512449046964}
   - component: {fileID: 2240172890816122782}
-  - component: {fileID: 1167262096609905066}
+  - component: {fileID: 3347858728657731165}
   m_Layer: 6
-  m_Name: DefaultWeapon (3)
+  m_Name: InstaKillWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1167262096609905066
+--- !u!114 &3347858728657731165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -506,12 +506,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4004411797347408438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
+  m_Script: {fileID: 11500000, guid: ac48b2524085436cba81c454b68406f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
-  Countdown: 0.5
-  Speed: 3
+  Damage: 1000
+  Countdown: 5
+  Speed: 1
   PoolingItem: 0
   ProjectileSpawnTransofm: {fileID: 699167650076217984}
 --- !u!1 &5266207130631730567
