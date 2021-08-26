@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Views.Tank;
 
-public class TankViewController : MonoBehaviour, ILivedEntity
+public class TankViewController : MonoBehaviour, ILivedEntity, ICollisionComponent
 {
     [SerializeField] private Rigidbody2D _rb = default;
     [SerializeField] private List<BaseWeaponComponent> _weapons = default;

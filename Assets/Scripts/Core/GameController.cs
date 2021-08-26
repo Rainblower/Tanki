@@ -10,7 +10,10 @@ namespace Core
         public PlayerController PlayerController { get; private set; }
         public LevelController LevelController { get; private set; }
         public EnemyController EnemyController { get; private set; }
-
+        public CollisionController CollisionController { get; private set; }
+        public ObjectsPooler ObjectsPooler { get; private set; }
+        
+        
         private bool _gameStarted;
         
         public GameController(Transform transform, GameConfig gameConfig)
@@ -19,6 +22,9 @@ namespace Core
             PlayerController = new PlayerController(transform,gameConfig);
             LevelController = new LevelController(transform,gameConfig);
             EnemyController = new EnemyController(transform,gameConfig);
+            CollisionController = new CollisionController(this);
+
+            ObjectsPooler = Object.Instantiate(gameConfig.ObjectsPooler, transform);
             
             StartGame();
         }

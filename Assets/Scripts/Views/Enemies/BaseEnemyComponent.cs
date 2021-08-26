@@ -4,7 +4,7 @@ using Views.Tank;
 
 namespace Views.Enemies
 {
-    public class BaseEnemyComponent: MonoBehaviour, ILivedEntity
+    public class BaseEnemyComponent: MonoBehaviour, ILivedEntity, ICollisionComponent
     {
         [SerializeField] private float _health = default;
         [SerializeField] private float _armor = default;

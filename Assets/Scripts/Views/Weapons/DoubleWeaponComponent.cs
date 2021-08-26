@@ -12,15 +12,16 @@ namespace Views.Weapons
         {
             if (!CanAttack) return;
             
-            var a = GameObject.Find("ObjectsPooler").GetComponent<ObjectsPooler>().GetFromPool<BaseProjectile>(PoolingItem);
-            var b = GameObject.Find("ObjectsPooler").GetComponent<ObjectsPooler>().GetFromPool<BaseProjectile>(PoolingItem);
-            a.transform.position = ProjectileSpawnTransofm.position;
-            a.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
-            a.Active();
+            var projectileFirst = BaseController.SystemController.GameController.ObjectsPooler.GetFromPool<BaseProjectile>(PoolingItem);
+            var projectileDouble = BaseController.SystemController.GameController.ObjectsPooler.GetFromPool<BaseProjectile>(PoolingItem);
             
-            b.transform.position = _additionalProjectileSpawnTransofrm.position;
-            b.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
-            b.Active();
+            projectileFirst.transform.position = ProjectileSpawnTransofm.position;
+            projectileFirst.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
+            projectileFirst.Active();
+            
+            projectileDouble.transform.position = _additionalProjectileSpawnTransofrm.position;
+            projectileDouble.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
+            projectileDouble.Active();
             StartCountdown();
         }
     }

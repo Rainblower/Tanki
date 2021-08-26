@@ -60,7 +60,7 @@ namespace Core
             return baseProjectile.GetComponent<T>();
         }
 
-        private void ReturnToPool<T>(PoolingItemType type, GameObject gameObject) 
+        public void ReturnToPool(PoolingItemType type, GameObject gameObject) 
         {
             if (gameObject == null) return;
             _objectsPool[type].Add( gameObject );

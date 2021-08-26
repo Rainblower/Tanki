@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   _tank: {fileID: 818539970381651161, guid: c9dcc1fc0745c6248af3321a6e26c13c, type: 3}
+  _objectsPooler: {fileID: 7036057690305207240, guid: 7b5025a8cdf7e3a42a5ecb66b7e1eff0, type: 3}
   _levels:
   - {fileID: 2585254370834350432, guid: 76716dc30138480409a5e1d7cca4bd6e, type: 3}

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Controllers;
+using Core;
 using UnityEngine;
+using Views.Tank;
 
 namespace Views.Weapons.Projectiles
 {
-    public abstract class BaseProjectile: MonoBehaviour
+    public abstract class BaseProjectile: MonoBehaviour, ICollisionComponent
     {
-        public Collider2D Collider2D;
-
+        public PoolingItemType Type;
+        
         private ProjectileSettings _projectileSettings;
         private bool _active;
         
@@ -31,6 +33,11 @@ namespace Views.Weapons.Projectiles
             {
                 transform.position += Time.deltaTime * _projectileSettings.Direction * _projectileSettings.Speed;
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            CollisionController.DetectCollision(this, other.collider);
         }
     }
 
