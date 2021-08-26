@@ -34,17 +34,18 @@ namespace Controllers
 
         private static void ProjectileCollision(BaseProjectile projectile,Collider2D collider)
         {
-            if (collider.GetComponent<ObstacleComponent>())
+            var enemy = collider.GetComponent<BaseEnemyComponent>();
+            if (enemy != null)
             {
-                projectile.Disable();
-                _gameController.ObjectsPooler.ReturnToPool(projectile.Type, projectile.gameObject);
+                var a = _gameController.DamageController.DoDamage(enemy, projectile.Damage);
+                if (!a)
+                {
+                    MonoBehaviour.Destroy(enemy.gameObject);
+                }
             }
-            else if (collider.GetComponent<BaseEnemyComponent>())
-            {
-                projectile.Disable();
-                MonoBehaviour.Destroy(projectile.gameObject);
-                MonoBehaviour.Destroy(collider.gameObject);
-            }
+            
+            projectile.Disable();
+            _gameController.ObjectsPooler.ReturnToPool(projectile.Type, projectile.gameObject);
         }
     }
 }

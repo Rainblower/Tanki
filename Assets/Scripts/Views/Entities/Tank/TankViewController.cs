@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Views.Tank;
 
-public class TankViewController : MonoBehaviour, ILivedEntity, ICollisionComponent
+public class TankViewController : Entity, ICollisionComponent
 {
     [SerializeField] private Rigidbody2D _rb = default;
     [SerializeField] private List<BaseWeaponComponent> _weapons = default;
@@ -20,14 +20,14 @@ public class TankViewController : MonoBehaviour, ILivedEntity, ICollisionCompone
     private float _velocity;
     private float _rotation;
 
-    public float Health => _tankModel.Health;
-    public float Armor => _tankModel.Armor;
-
     public void Init(TankModel tankModel)
     {
         _tankModel = tankModel;
         _currentWeapon = _weapons.FirstOrDefault();
         _currentWeaponIndex = 0;
+
+        Health = tankModel.Health;
+        Armor = tankModel.Armor;
     }
     
     private void Fire()

@@ -11,20 +11,25 @@ namespace Views.Weapons.Projectiles
         
         private ProjectileSettings _projectileSettings;
         private bool _active;
+        private float _damage;
+
+        public float Damage => _damage;
         
         public void Init(ProjectileSettings projectileSettings)
         {
             _projectileSettings = projectileSettings;
         }
-        
-        public void Active()
+
+        public void Active(float damage)
         {
             _active = true;
+            _damage = damage;
         }
 
         public void Disable()
         {
             _active = false;
+            _damage = 0;
         }
 
         public void Update()

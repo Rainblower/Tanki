@@ -887,8 +887,8 @@ MonoBehaviour:
   _spawnRate: 4
   _enemyComponents:
   - {fileID: 5612378802040289764, guid: cb97ad6c78259ad42bcbf40c98cc8035, type: 3}
-  - {fileID: 7409423582157754059, guid: 31aede90864ee704383db52b2169db8e, type: 3}
   - {fileID: 8958903016173331070, guid: c3c525e42c292ed4a9f047aee0b57e1d, type: 3}
+  - {fileID: 7409423582157754059, guid: 31aede90864ee704383db52b2169db8e, type: 3}
 --- !u!1 &7843114683216525321
 GameObject:
   m_ObjectHideFlags: 0

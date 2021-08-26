@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 150
-  _armor: 50
-  _damage: 4
+  _armor: 30
+  _damage: 10
   _speed: 0.5
 --- !u!212 &2832685133962239400
 SpriteRenderer:
@@ -140,8 +140,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
-  m_LinearDrag: 100
-  m_AngularDrag: 100
+  m_LinearDrag: 1000
+  m_AngularDrag: 1000
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

@@ -81,7 +81,7 @@ MonoBehaviour:
   _weapons:
   - {fileID: 818539971501612678}
   - {fileID: 3796982033065886157}
-  - {fileID: 7090197008456612358}
+  - {fileID: 2119706076782297271}
   - {fileID: 1167262096609905066}
 --- !u!212 &818539970381651166
 SpriteRenderer:
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 50
   Countdown: 0.5
   Speed: 3
   PoolingItem: 0
@@ -322,9 +322,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5974760803953992413}
   - component: {fileID: 6302129751329061279}
-  - component: {fileID: 7090197008456612358}
+  - component: {fileID: 2119706076782297271}
   m_Layer: 6
-  m_Name: DefaultWeapon (2)
+  m_Name: TripleWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7090197008456612358
+--- !u!114 &2119706076782297271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,12 +405,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2246231608952598336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
+  m_Script: {fileID: 11500000, guid: 39eda2848eec4ac2a4d91cd5f7440fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 60
   Countdown: 0.5
-  Speed: 3
+  Speed: 4
   PoolingItem: 0
   ProjectileSpawnTransofm: {fileID: 6244805701433984683}
 --- !u!1 &4004411797347408438
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5c73af0a564685bceb821c5163b114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 50
   Countdown: 0.5
   Speed: 3
   PoolingItem: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9492ee0efd140c6b0ac03cff70472e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 2
+  Damage: 60
   Countdown: 0.5
   Speed: 5
   PoolingItem: 0

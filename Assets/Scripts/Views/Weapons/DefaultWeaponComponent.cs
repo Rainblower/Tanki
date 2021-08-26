@@ -12,7 +12,7 @@ namespace Views.Weapons
             var projectile = BaseController.SystemController.GameController.ObjectsPooler.GetFromPool<BaseProjectile>(PoolingItem);
             projectile.transform.position = ProjectileSpawnTransofm.position;
             projectile.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
-            projectile.Active();
+            projectile.Active(Damage);
             StartCountdown();
         }
     }

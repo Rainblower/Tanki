@@ -17,11 +17,11 @@ namespace Views.Weapons
             
             projectileFirst.transform.position = ProjectileSpawnTransofm.position;
             projectileFirst.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
-            projectileFirst.Active();
+            projectileFirst.Active(Damage/2);
             
             projectileDouble.transform.position = _additionalProjectileSpawnTransofrm.position;
             projectileDouble.Init(new ProjectileSettings{Direction = transform.up, Speed = Speed});
-            projectileDouble.Active();
+            projectileDouble.Active(Damage/2);
             StartCountdown();
         }
     }

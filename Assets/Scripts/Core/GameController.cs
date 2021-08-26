@@ -11,6 +11,7 @@ namespace Core
         public LevelController LevelController { get; private set; }
         public EnemyController EnemyController { get; private set; }
         public CollisionController CollisionController { get; private set; }
+        public DamageController DamageController { get; private set; }
         public ObjectsPooler ObjectsPooler { get; private set; }
         
         
@@ -23,6 +24,7 @@ namespace Core
             LevelController = new LevelController(transform,gameConfig);
             EnemyController = new EnemyController(transform,gameConfig);
             CollisionController = new CollisionController(this);
+            DamageController = new DamageController();
 
             ObjectsPooler = Object.Instantiate(gameConfig.ObjectsPooler, transform);
             
