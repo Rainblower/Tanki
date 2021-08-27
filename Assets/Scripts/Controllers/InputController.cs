@@ -11,6 +11,7 @@ namespace Controllers
         public event Action Fire;
         public event Action NextWeapon;
         public event Action PrevWeapon;
+        public event Action RestartGame;
         
         public void LocalUpdate()
         {
@@ -20,6 +21,7 @@ namespace Controllers
             if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Space)) Fire?.Invoke();
             if (Input.GetKeyDown(KeyCode.E)) NextWeapon?.Invoke();
             if (Input.GetKeyDown(KeyCode.Q)) PrevWeapon?.Invoke();
+            if (Input.GetKeyDown(KeyCode.R)) RestartGame?.Invoke();
         }
     }
 }

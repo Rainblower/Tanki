@@ -9,35 +9,49 @@ namespace Controllers
         private Transform _playerTransform;
         private GameConfig _gameConfig;
 
-        private TankViewController _tankViewController;
+        private TankComponent _tankComponent;
 
-        public TankViewController Player => _tankViewController;
-        
+        public TankComponent Player => _tankComponent;
+
         public PlayerController(Transform transform, GameConfig gameConfig)
         {
             _gameConfig = gameConfig;
-            
+
             GameObject go = new GameObject("Player");
             go.transform.parent = transform;
 
             _playerTransform = go.transform;
         }
-        
+
 
         public void SpawnPlayer()
         {
+            if (_tankComponent != null)
+            {
+                Object.Destroy(_tankComponent.gameObject);
+            }
+
             TankModel tankModel = new TankModel();
-            _tankViewController = Object.Instantiate(_gameConfig.Tank, _playerTransform);
-            _tankViewController.Init(tankModel);
+            _tankComponent = Object.Instantiate(_gameConfig.Tank, _playerTransform);
+            _tankComponent.Init(tankModel);
         }
 
         public void SetupInput(InputController inputController)
         {
-            inputController.Move += _tankViewController.MoveHandler;
-            inputController.Rotate += _tankViewController.RotateHandler;
-            inputController.Fire += _tankViewController.FireHandler;
-            inputController.NextWeapon += _tankViewController.NextWeaponHandler;
-            inputController.PrevWeapon += _tankViewController.PrevWeaponHandler;
+            inputController.Move += _tankComponent.MoveHandler;
+            inputController.Rotate += _tankComponent.RotateHandler;
+            inputController.Fire += _tankComponent.FireHandler;
+            inputController.NextWeapon += _tankComponent.NextWeaponHandler;
+            inputController.PrevWeapon += _tankComponent.PrevWeaponHandler;
+        }
+
+        public void EndGame(InputController inputController)
+        {
+            inputController.Move -= _tankComponent.MoveHandler;
+            inputController.Rotate -= _tankComponent.RotateHandler;
+            inputController.Fire -= _tankComponent.FireHandler;
+            inputController.NextWeapon -= _tankComponent.NextWeaponHandler;
+            inputController.PrevWeapon -= _tankComponent.PrevWeaponHandler;
         }
     }
 }

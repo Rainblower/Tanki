@@ -1,4 +1,5 @@
 ﻿using System;
+using Controllers;
 using UnityEngine;
 using Views.Tank;
 
@@ -46,6 +47,11 @@ namespace Views.Enemies
         private void MoveToTarget()
         {
             transform.position += transform.right * Time.deltaTime * _speed;
+        }
+        
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            CollisionController.DetectCollision(this, other.collider);
         }
     }
 }

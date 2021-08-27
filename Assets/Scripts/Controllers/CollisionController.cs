@@ -23,12 +23,33 @@ namespace Controllers
                 case BaseProjectile projectile:
                     ProjectileCollision(projectile,other);
                     break;
-                case TankViewController tankViewController:
+                case TankComponent tankViewController:
                     break;
                 case BaseEnemyComponent baseEnemyComponent:
+                    EnemyCollision(baseEnemyComponent, other);
                     break;
                 case ObstacleComponent obstacleComponent:
                     break;
+            }
+        }
+
+        private static void EnemyCollision(BaseEnemyComponent enemyComponent, Collider2D collider)
+        {
+            var tank = collider.GetComponent<TankComponent>();
+            if (tank != null)
+            {
+                if (!tank.Invincible)
+                {
+                    var isLive = _gameController.DamageController.DoDamage(tank, enemyComponent.Damage);
+                    if (!isLive)
+                    {
+                        _gameController.RestartGame();
+                    }
+                    else
+                    {
+                        tank.StartInvincible();
+                    }
+                }
             }
         }
 

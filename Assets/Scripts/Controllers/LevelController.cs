@@ -25,9 +25,9 @@ namespace Controllers
                 Object.Destroy(_currentLevel.gameObject);
             }
             
-            _currentLevel = _gameConfig.Levels[index];
+            var level = _gameConfig.Levels[index];
 
-            Object.Instantiate(_currentLevel, _parent);
+            _currentLevel = Object.Instantiate(level, _parent);
         }
     }
 }

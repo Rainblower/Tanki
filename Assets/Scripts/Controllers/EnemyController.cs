@@ -9,7 +9,7 @@ namespace Controllers
     {
         private GameConfig _gameConfig;
         
-        private TankViewController _target;
+        private TankComponent _target;
         private LevelComponent _currentLevel;
 
         private Transform _enemiesTransofm;
@@ -26,14 +26,17 @@ namespace Controllers
             _gameConfig = gameConfig;
         }
 
-        public void Start(TankViewController target, LevelComponent level)
+        public void Start(TankComponent target, LevelComponent level)
         {
             _target = target;
             _currentLevel = level;
 
-            GameObject go = new GameObject("Enemies");
-            go.transform.parent = _parent;
-            _enemiesTransofm = go.transform;
+            if (_enemiesTransofm == null)
+            {
+                GameObject go = new GameObject("Enemies");
+                go.transform.parent = _parent;
+                _enemiesTransofm = go.transform;
+            }
             
             SpawnEnemies();
         }
@@ -41,6 +44,18 @@ namespace Controllers
         private void SpawnEnemies()
         {
             _canSpawn = true;
+        }
+
+        public void EndGame()
+        {
+            _canSpawn = false;
+            
+            foreach (var enemyComponent in _livingEnemies)
+            {
+                Object.Destroy(enemyComponent.gameObject);
+            }
+            
+            _livingEnemies.Clear();
         }
 
         public void LocalUpdate()

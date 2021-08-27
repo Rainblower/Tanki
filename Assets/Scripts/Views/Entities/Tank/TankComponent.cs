@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Models;
@@ -5,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Views.Tank;
 
-public class TankViewController : Entity, ICollisionComponent
+public class TankComponent : Entity, ICollisionComponent
 {
     [SerializeField] private Rigidbody2D _rb = default;
     [SerializeField] private List<BaseWeaponComponent> _weapons = default;
@@ -19,6 +20,10 @@ public class TankViewController : Entity, ICollisionComponent
     
     private float _velocity;
     private float _rotation;
+
+    private bool _invincible;
+
+    public bool Invincible => _invincible;
 
     public void Init(TankModel tankModel)
     {
@@ -43,6 +48,18 @@ public class TankViewController : Entity, ICollisionComponent
     public void RotateHandler(float rotation)
     {
         _rotation = rotation;
+    }
+
+    public void StartInvincible()
+    {
+        StartCoroutine(DoInvincible());
+    }
+
+    private IEnumerator DoInvincible()
+    {
+        _invincible = true;
+        yield return new WaitForSeconds(_tankModel.InvincibleTime);
+        _invincible = false;
     }
 
     public void FireHandler()

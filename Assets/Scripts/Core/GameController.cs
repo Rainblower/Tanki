@@ -29,6 +29,8 @@ namespace Core
             ObjectsPooler = Object.Instantiate(gameConfig.ObjectsPooler, transform);
             
             StartGame();
+
+            InputController.RestartGame += RestartGame;
         }
 
         public void StartGame()
@@ -50,6 +52,19 @@ namespace Core
                 InputController.LocalUpdate();
                 EnemyController.LocalUpdate();
             }
+        }
+
+        public void EndGame()
+        {
+            EnemyController.EndGame();
+            PlayerController.EndGame(InputController);
+        }
+
+        public void RestartGame()
+        {
+            Debug.LogWarning("Restarting game...");
+            EndGame();
+            StartGame();
         }
     }
 }
