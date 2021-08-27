@@ -21,6 +21,8 @@ namespace Views.Enemies
         {
             Health = _health;
             Armor = _armor;
+            
+            StartHealth();
         }
 
         public void SetTarget(Transform target)

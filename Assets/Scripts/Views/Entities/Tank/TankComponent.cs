@@ -33,6 +33,8 @@ public class TankComponent : Entity, ICollisionComponent
 
         Health = tankModel.Health;
         Armor = tankModel.Armor;
+        
+        StartHealth();
     }
     
     private void Fire()

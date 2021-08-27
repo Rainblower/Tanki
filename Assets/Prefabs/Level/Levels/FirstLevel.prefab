@@ -884,7 +884,7 @@ MonoBehaviour:
   - {fileID: 3852165287278874974}
   - {fileID: 6482271193205165032}
   _maxEnemyCount: 10
-  _spawnRate: 4
+  _spawnRate: 3
   _enemyComponents:
   - {fileID: 5612378802040289764, guid: cb97ad6c78259ad42bcbf40c98cc8035, type: 3}
   - {fileID: 8958903016173331070, guid: c3c525e42c292ed4a9f047aee0b57e1d, type: 3}
